@@ -1,0 +1,329 @@
+            Positions in css assignment
+1.Task 1:
+Problem Statement
+Write code t0 position 3 equal-sized (30 X 30px) boxes A/ B/ C/ D/ and E as follows.
+1.box A ,200px from the left and ,200px from the top of the viewport
+2. box B -30px left and -30px above from the center of box A
+3. box B -30px right and -30px above from the center of box A
+4. box B -30px left and -30px below from the center of box A.
+5. box B -30px right and -30px below from the center of box A.  
+ans. 
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="style.css" />
+<title>Document</title>
+</head>
+<body>
+<div class="box boxA">
+A
+<div class="box boxB">B</div>
+<div class="box boxC">C</div>
+<div class="box boxD">D</div>
+<div class="box boxE">E</div>
+</div>
+</body>
+</html> 
+
+style.css
+
+.box {
+width: 50px;
+height: 50px;
+background-color: aquamarine;
+border: 1px solid lightgreen;
+text-align: center;
+}
+.boxA {
+position: relative;
+top: 200px;
+left: 200px;
+}
+.boxB {
+position: absolute;
+left: -30px;
+bottom: 30px;
+}
+.boxC {
+position: absolute;
+right: -30px;
+bottom: 30px;
+}
+.boxD {
+position: absolute;
+left: -30px;
+top: 30px;
+}
+.boxE {
+position: absolute;
+right: -30px;
+top: 30px;
+}                       
+
+
+2.Problem Statement
+Explain the difference between Absolute and Relative positioning.
+ans.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border:solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+   <table>
+    <tr>
+        <th>absolute</th>
+        <th>relative</th>
+    </tr>
+    <tr>
+        <td>1. Elemets are positioned absolutely and their position is determined relative to their closest positioned ancestor</td>
+        <td>1.Elements are positioned relative to their normal position in the document flow</td>
+    </tr>
+    <tr>
+        <td>2.It's ideal when you need to precisely place an element at specific coordinates with a containing element</td>
+        <td>2.The surrounding elements are not affected by the relative positioning</td>
+    </tr>
+    <tr>
+        <td>3.Elements with absolute positioning do not affect the positioning of other elements</td>   
+        <td>3.Useful when you want to adjust an element's position from its default location</td>
+    </tr>
+    <tr>
+        <td>4.syntax:
+            {
+                position:absolute;
+            }
+        </td>
+        <td>4.syntax:
+            {
+                position:relative;
+            }
+        </td>
+    </tr>
+   </table> 
+</body>
+</html>
+
+3.Problem Statement
+Create a card as shown in the picture below. (You can use CSS float property only for layout).
+ans.
+index1.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<link rel="stylesheet" href="index1.css" />
+</head>
+<body>
+    <div class="card">
+    <img
+    class="card-image"
+    src="doodles.jpg"
+    alt="random image"
+    />
+    <div class="card-body">
+    <h3 class="card-title">The Earth!!!</h3>
+    <p>
+    Nature is Earth's masterpiece, a symphony of life composed through
+    millennia. Its landscapes whisper tales of ancient mountains, winding
+    rivers, and flourishing forests, reminding us of the planet's
+    boundless beauty. From delicate petals to towering redwoods, nature's
+    artistry stirs awe and reconnects us to the essence of existence.
+    Nature is Earth's masterpiece, a symphony of life composed through
+    millennia. Its landscapes whisper tales of ancient mountains, winding
+    rivers, and flourishing forests.
+    </p>
+    </div>
+    </div>
+    </body>
+    </html>
+    index1.css
+    .card {
+    padding: 10px;
+    background-color: beige;
+    border-radius: 5px;
+    }
+    .card-image {
+    float: right;
+    padding-left: 10px;
+    padding-right: 10px;
+    } 
+
+4.Task 4:
+Problem Statement
+Create a simple header that sticks to the top of a webpage upon scrolling.
+answer.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    /* Style for the header navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #3498db;
+      padding: 10px;
+    }
+
+    /* Style for the navigation links in the navbar */
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    /* Style for the webpage content */
+    .content {
+      padding: 60px 20px 20px;
+    }
+
+    /* Style for the individual sections with h1 headings */
+    .content h1 {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+    <a href="#service">Service</a>
+    <a href="#address">Address</a>
+  </div>
+  <div class="content">
+    <h1 id="home">harish clothes store</h1>
+    <p> Planning, creating, and publishing website homepage content is no walk in the park. In fact, it presents the most difficult—and important—decisions a digital marketer must make.
+
+        Everyone seems to want to know the exact formula for getting it right. But no such formula exists. So the process of getting homepage content published often paralyzes marketers big and small, experienced and novice.
+        
+        I have the “What should I put on my homepage?” conversation with clients nearly every day. The answer could be:
+        
+        (a) Content that best positions your company as the solution to a specific problem
+        
+        (b) Content prospective buyers are looking for
+        
+        (c) Both of the above
+        
+        Clearly, (c) is the optimum answer. If your website’s homepage is doing its job effectively it guides visitors one step deeper into your website. Better yet, it guides the right visitors to the next page, or the content they seek.
+        
+        See, your homepage, your content, and your marketing in general, shouldn’t aim to engage everyone. Though it may seem counter-intuitive, it should deflect the wrong people. Your conversion depends on engaging the right people, right?
+        </p>
+
+    <h1 id="about">About Us</h1>
+    <p>Reviews, client logos, case studies, and results bring consistency to your About Us page. It’s what really proves what you are saying is real and the impact you can bring to future clients.
+        With these components in mind, you will have a framework from which to build an engaging and unique About Us page.
+        However, if you are looking for some inspiration, the 25 examples below will guide your creative process.</p>
+    <p>we are here to serve you best varities of lahengas , sarees, kurtas, pants etc.... you can find the best quality of products and trendy products at us at reasonable price.</p>
+    <p>come and visit us so you can find the best products we are open all days .</p>
+
+    <h1 id="contact">Contact Us</h1>
+    <p>Contact Us
+        We value your feedback and inquiries. Please don't hesitate to get in touch with us through the following contact methods:
+        Customer Support
+        If you have any questions, concerns, or require assistance, our dedicated customer support team is here to help. You can reach us via email at kajollalwai20@gmail.com or by calling our toll-free number: 7819954813.
+        General Inquiries
+        For general inquiries, partnerships, or business-related matters, please contact us at info@yourwebsite.com.</p>
+
+    <h1 id="service">Our Services</h1>
+    <p>We offer a wide range of services to our clients.
+        Our Services
+At [Harish clothes store, shahganj agra], we are dedicated to providing a wide range of high-quality services to meet your needs. Our experienced team is committed to delivering exceptional solutions tailored to your requirements. Explore our services below:
+1. Service Name
+Description: A brief description of the service and its benefits.
+    </p>
+
+    <h1 id="address">Our Address</h1>
+    <p>Our Address
+
+        [Harish clothes store]
+        Shahganj Agra near kala mata mandir
+        uttar pradesh agra 282010
+        Country:india
+        Contact Information
+        
+        Email: kajollalwani20@gmail.com
+        Phone: 8755632207
+        Phone: 7819954813
+        Monday - Friday: 9:00 AM to 10:00 PM
+        Saturday: 10:00 AM to 10:00 AM
+        Sunday: opened
+    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam at unde obcaecati animi fuga sequi iure maxime nulla dicta? Dignissimos, deserunt temporibus necessitatibus magnam asperiores voluptates accusantium. At, veritatis </h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, vel nobis sed, deleniti et suscipit, iure sunt omnis incidunt eaque dolores. Impedit laborum cumque veritatis hic est? Quae, hic ullam?
+    Deleniti nemo, facilis a ratione eligendi eos blanditiis optio qui, aperiam, alias amet. Optio, cumque. Eius aut assumenda, asperiores accusamus dolorem quod optio repellat enim recusandae impedit voluptatem quasi officia.
+    Tenetur et magni minima orrupti consequuntur nisi sit tenetur laudantium quis deserunt nam esse, eos iusto, temporibus excepturi adipisci! Magnam asperiores atque pariatur optio accusantium sequi magni, maxime illum consequatur.
+    Sint exercitationem alisi dolor fugiat a fugit obcaecati omnis, tenetur tempora similique optio deleniti consequuntur facilis at exercitationem temporibus ut accusantium qui natus molestiae delectus! Inventore?
+    Sint sunt nihil id dolores, enim laborum tenetur! Amet deserunt nam, assumenda, tenetur illo debitis, expedita sequi tempore odio veniam perspiciatis rerum ullam ex ipsam obcaecati. Incidunt a iste accusantium.
+    Sint labore quae omnis adipisci. Amet, doloremque tempore. Recusandae dolores aut doloribus, consectetur ipsa unde veniam. Adipisci iure voluptas corrupti, reiciendis rerum, asperiores est sit ad veritatis dolorum earum nesciunt!
+    Libero incidunt amet a dolorem consequatur dolor eligendi inventore. Deserunt aliquam doloribus laborum, quia hic natus animi autem delectus sed vel dolorem possimus perspiciatis, repudiandae, a asperiores iure molestiae. Corporis!</p>
+  </div>
+</body>
+</html>
+5.task5 
+Explain the z-index with code example
+ans.The "z-index" is a CSS property that controls the stacking order of elements in a web page. It is primarily used for elements that overlap or are positioned one on top of another, like in a layered layout.
+Elements with a higher z-index value will be displayed on top of elements with lower z-index values. If multiple elements have the same z-index, the order in the HTML source code determines their stacking order.
+           Code:
+
+           <!DOCTYPE html>
+           <html>
+           <head>
+               <style>
+                   .box {
+                       width: 100px;
+                       height: 100px;
+                       position: absolute;
+                   }
+           
+                   #red-box {
+                       background-color: red;
+                       left: 50px;
+                       top: 50px;
+                       z-index: 1; /* This box will be behind the blue box */
+                   }
+           
+                   #blue-box {
+                       background-color: blue;
+                       left: 75px;
+                       top: 75px;
+                       z-index: 2; /* This box will be on top of the red box */
+                   }
+           
+                   #green-box {
+                       background-color: green;
+                       left: 100px;
+                       top: 100px;
+                       z-index: 3; /* This box will be on top of the blue box */
+                   }
+           
+                   #yellow-box {
+                       background-color: yellow;
+                       left: 125px;
+                       top: 125px;
+                       z-index: 1; /* This box will be behind the red box */
+                   }
+               </style>
+           </head>
+           <body>
+               <div class="box" id="red-box"></div>
+               <div class="box" id="blue-box"></div>
+               <div class="box" id="green-box"></div>
+               <div class="box" id="yellow-box"></div>
+           </body>
+           </html> 
